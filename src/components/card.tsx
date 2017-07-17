@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text, Image, StyleSheet } from "react-native"
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native"
 
 interface Props { }
 interface State { }
@@ -14,13 +14,13 @@ class Card extends React.Component<Props, State>{
         <View style={styles.content}>
           <Text style={styles.title}>Huge bear ate an human being!!!</Text>
           <Text style={styles.snippet}>And was killed by police</Text>
-
-          <View style={styles.social}>
-            <Text>From: oeddyo  </Text>
-            <Text>Liked: 397</Text>
-          </View>
+          <TouchableOpacity onPress={() => console.log("inside")}>
+            <View style={styles.social}>
+              <Text>From: oeddyo  </Text>
+              <Text>Liked: 397</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-
       </View>
     )
   }
@@ -29,7 +29,8 @@ class Card extends React.Component<Props, State>{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: "row",
+    margin: 8
   },
   image: {
     borderRadius: 44,

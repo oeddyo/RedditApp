@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 class Card extends React.Component {
     render() {
         return (React.createElement(View, { style: styles.container },
@@ -7,15 +7,17 @@ class Card extends React.Component {
             React.createElement(View, { style: styles.content },
                 React.createElement(Text, { style: styles.title }, "Huge bear ate an human being!!!"),
                 React.createElement(Text, { style: styles.snippet }, "And was killed by police"),
-                React.createElement(View, { style: styles.social },
-                    React.createElement(Text, null, "From: oeddyo  "),
-                    React.createElement(Text, null, "Liked: 397")))));
+                React.createElement(TouchableOpacity, { onPress: () => console.log("inside") },
+                    React.createElement(View, { style: styles.social },
+                        React.createElement(Text, null, "From: oeddyo  "),
+                        React.createElement(Text, null, "Liked: 397"))))));
     }
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: "row"
+        flexDirection: "row",
+        margin: 8
     },
     image: {
         borderRadius: 44,
